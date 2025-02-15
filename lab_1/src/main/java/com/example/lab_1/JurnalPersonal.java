@@ -5,11 +5,38 @@ import java.util.Objects;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 
+
 @SpringBootApplication
 public class JurnalPersonal {
 
     public static void main(String[] args) {
         SpringApplication.run(JurnalPersonal.class, args);
+
+        IntrareJurnal intrare1 = new IntrareJurnal(LocalDate.now(), "Ziua 1", "Am avut o zi productiva.", "Bucuros", 8);
+        IntrareJurnal intrare2 = new IntrareJurnal(LocalDate.of(2024, 10, 27), "Ziua 2", "M-am simtit putin obosit azi.", "Neutru", 5);
+        IntrareJurnal intrare3 = new IntrareJurnal();
+        intrare3.setTitlu("Ziua 3");
+        intrare3.setContinut("Am lucrat la proiectul nou.");
+        intrare3.setStareEmotionala("Entuziasmat");
+        intrare3.setNivelEnergie(7);
+
+
+        System.out.println(intrare1);
+        System.out.println(intrare2);
+        System.out.println(intrare3);
+
+
+        Utilizator user1 = new Utilizator("JavaJavist", "password123", "java.javist@gmail.com", LocalDate.of(1990, 5, 15));
+        System.out.println(user1);
+
+        Utilizator user2 = new Utilizator();
+        user2.setNumeUtilizator("JavaJavist");
+        user2.setParola("paswrrods");
+        user2.setEmail("temp@mail.com");
+        user2.setDataNasterii(LocalDate.of(1995, 11, 2));
+        System.out.println(user2);
+
+
     }
 
 }
@@ -18,10 +45,9 @@ class IntrareJurnal {
     private LocalDate data;
     private String titlu;
     private String continut;
-    private String stareEmotionala; // Ex: "Fericit", "Trist", "Neutru"
+    private String stareEmotionala;
     private int nivelEnergie;
 
-    // Constructor cu parametri
     public IntrareJurnal(LocalDate data, String titlu, String continut, String stareEmotionala, int nivelEnergie) {
         this.data = data;
         this.titlu = titlu;
