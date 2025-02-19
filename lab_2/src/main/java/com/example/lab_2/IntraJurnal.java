@@ -1,13 +1,8 @@
 package com.example.lab_2;
-
-import lombok.Getter;
-import lombok.Setter;
-
+import lombok.Data;
 import java.time.LocalDate;
-import java.util.Objects;
 
-@Setter
-@Getter
+@Data
 class IntraJurnal {
     private LocalDate data;
     private String titlu;
@@ -25,30 +20,5 @@ class IntraJurnal {
 
     public IntraJurnal() {
         this.data = LocalDate.now();
-    }
-
-
-    @Override
-    public String toString() {
-        return "IntraJurnal{" +
-                "data=" + data +
-                ", titlu='" + titlu + '\'' +
-                ", continut='" + continut + '\'' +
-                ", stareEmotionala='" + stareEmotionala + '\'' +
-                ", nivelEnergie=" + nivelEnergie +
-                '}';
-    }
-
-    @Override
-    public boolean equals(Object o) {
-        if (this == o) return true;
-        if (o == null || getClass() != o.getClass()) return false;
-        IntraJurnal that = (IntraJurnal) o;
-        return nivelEnergie == that.nivelEnergie && Objects.equals(data, that.data) && Objects.equals(titlu, that.titlu) && Objects.equals(continut, that.continut) && Objects.equals(stareEmotionala, that.stareEmotionala);
-    }
-
-    @Override
-    public int hashCode() {
-        return Objects.hash(data, titlu, continut, stareEmotionala, nivelEnergie);
     }
 }

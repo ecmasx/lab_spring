@@ -1,14 +1,10 @@
 package com.example.lab_2;
-
 import java.time.LocalDate;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
-
 
 @SpringBootApplication
 public class JurnalPersonal {
     public static void main(String[] args) {
-
-        System.out.println("\n");
 
         IntraJurnal intrare1 = new IntraJurnal(LocalDate.now(), "Ziua 1", "Am avut o zi productiva.", "Bucuros", 8);
         IntraJurnal intrare2 = new IntraJurnal(LocalDate.of(2024, 10, 27), "Ziua 2", "M-am simtit putin obosit azi.", "Neutru", 5);
